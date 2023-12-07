@@ -28,12 +28,10 @@ int ft_check_line(char *s)
 
 char	*ft_read(int fd, char *s)
 {
-	int	i ;
 	char *ptr;
 	int bytes_read;
 	int nb;
 
-	i = 0;
 	ptr = (char *)malloc((BUFFER_SIZE + 1) * sizeof(char));
 	if(!ptr)
 		return (NULL);
@@ -44,9 +42,9 @@ char	*ft_read(int fd, char *s)
 		if(bytes_read == -1)
 			break;
 		ptr[bytes_read] = '\0';
-		// if (!s)
-		// 	s = ft_strjoin(NULL,ptr);
-		//else
+		if (!s)
+			s = ft_strjoin(NULL,ptr);
+		else
 			s = ft_strjoin(s,ptr);
 		nb = ft_check_line(s);
 		if(nb > 0)
