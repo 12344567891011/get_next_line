@@ -6,7 +6,7 @@
 /*   By: atahtouh <atahtouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 14:22:33 by atahtouh          #+#    #+#             */
-/*   Updated: 2023/12/09 10:03:33 by atahtouh         ###   ########.fr       */
+/*   Updated: 2023/12/09 12:29:04 by atahtouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,16 +29,11 @@
 
 char	*ft_read(int fd, char *s)
 {
-<<<<<<< HEAD
 	int		i ;
 	char	*ptr;
 	int		bytes_read;
-=======
-	char *ptr;
-	int bytes_read;
-	int nb;
->>>>>>> 140632516b8db00245aa362671dabbfa305656ad
 
+	i = 0;
 	ptr = (char *)malloc((BUFFER_SIZE + 1) * sizeof(char));
 	if (!ptr)
 		return (NULL);
@@ -50,20 +45,11 @@ char	*ft_read(int fd, char *s)
 			break ;
 		ptr[bytes_read] = '\0';
 		if (!s)
-<<<<<<< HEAD
 			s = ft_strjoin(NULL, ptr);
 		else
 			s = ft_strjoin(s, ptr);
 		if (ft_strchar(s, '\n'))
 			break ;
-=======
-			s = ft_strjoin(NULL,ptr);
-		else
-			s = ft_strjoin(s,ptr);
-		nb = ft_check_line(s);
-		if(nb > 0)
-			break;
->>>>>>> 140632516b8db00245aa362671dabbfa305656ad
 	}
 	free (ptr);
 	return (s);
