@@ -29,11 +29,16 @@
 
 char	*ft_read(int fd, char *s)
 {
+<<<<<<< HEAD
 	int		i ;
 	char	*ptr;
 	int		bytes_read;
+=======
+	char *ptr;
+	int bytes_read;
+	int nb;
+>>>>>>> 140632516b8db00245aa362671dabbfa305656ad
 
-	i = 0;
 	ptr = (char *)malloc((BUFFER_SIZE + 1) * sizeof(char));
 	if (!ptr)
 		return (NULL);
@@ -45,11 +50,20 @@ char	*ft_read(int fd, char *s)
 			break ;
 		ptr[bytes_read] = '\0';
 		if (!s)
+<<<<<<< HEAD
 			s = ft_strjoin(NULL, ptr);
 		else
 			s = ft_strjoin(s, ptr);
 		if (ft_strchar(s, '\n'))
 			break ;
+=======
+			s = ft_strjoin(NULL,ptr);
+		else
+			s = ft_strjoin(s,ptr);
+		nb = ft_check_line(s);
+		if(nb > 0)
+			break;
+>>>>>>> 140632516b8db00245aa362671dabbfa305656ad
 	}
 	free (ptr);
 	return (s);
