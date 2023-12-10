@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.h                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atahtouh <atahtouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/05 19:59:45 by atahtouh          #+#    #+#             */
-/*   Updated: 2023/12/10 11:28:03 by atahtouh         ###   ########.fr       */
+/*   Created: 2023/12/10 11:48:34 by atahtouh          #+#    #+#             */
+/*   Updated: 2023/12/10 14:10:11 by atahtouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#ifndef GET_NEXT_LINE_BONUS_H
+# define GET_NEXT_LINE_BONUS_H
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 2147483647
+#  define BUFFER_SIZE 1
 # endif
 # include<stdio.h>
 # include<stdlib.h>

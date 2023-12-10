@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atahtouh <atahtouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/04 14:22:33 by atahtouh          #+#    #+#             */
-/*   Updated: 2023/12/10 11:43:37 by atahtouh         ###   ########.fr       */
+/*   Created: 2023/12/10 11:48:30 by atahtouh          #+#    #+#             */
+/*   Updated: 2023/12/10 14:10:25 by atahtouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 // int ft_check_line(char *s)
 // {
@@ -85,28 +85,32 @@ char	*ft_rest(char *s)
 
 char	*get_next_line(int fd)
 {
-	static char	*p1;
+	static char	*p1[BUFFER_SIZE];
 	char		*s;
 	char		*ligne;
-
+	
+	
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
-	s = ft_read(fd, p1);
+	s = ft_read(fd, p1[fd]);
 	if (!s)
 		return (NULL);
 	ligne = ft_extrat_line(s);
-	p1 = ft_rest(s);
+	p1[fd] = ft_rest(s);
 	free (s);
 	return (ligne);
 }
 
-// int main()
-// {
-//     int fd = open("test.txt", O_RDWR | O_CREAT, 0777);
-//     char *line1 = get_next_line(fd);
-// 	char *line2 = get_next_line(fd);
-//     printf("%s",line1);
-// 	printf("%s",line2);
-//     free(line1);
-//     //close(fd);
-// }
+int main()
+{
+    int fd = open("test.txt", O_RDWR);
+	int fd1 = open("test1.txt", O_RDWR);
+    char *line1 = get_next_line(fd);
+	char *line2 = get_next_line(fd1);
+    printf("%s",line1);
+	printf("%s",line2);
+    free(line1);
+	free(line2);
+    close(fd);
+	close(fd1);
+}
