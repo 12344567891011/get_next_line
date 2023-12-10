@@ -6,7 +6,11 @@
 /*   By: atahtouh <atahtouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 19:59:42 by atahtouh          #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2023/12/10 11:44:59 by atahtouh         ###   ########.fr       */
+=======
+/*   Updated: 2023/12/09 14:20:56 by atahtouh         ###   ########.fr       */
+>>>>>>> 9ab363e7372f9f44c63728d2e1ed6b650049e655
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,20 +79,20 @@ char	*ft_strjoin(char *s1, char *s2)
 	return (ptr);
 }
 
-char	*ft_strchar(char *s, char c)
+int	ft_strchar(char *s, char c)
 {
 	int	i;
 
 	i = 0;
 	if (!s)
-		return (NULL);
+		return (0);
 	while (s[i])
 	{
 		if (s[i] == c)
-			return (s + i);
+			return (1);
 		i++;
 	}
-	return (NULL);
+	return (0);
 }
 
 char	*ft_substr(char *s, int start, int size)
@@ -99,7 +103,11 @@ char	*ft_substr(char *s, int start, int size)
 
 	i = 0;
 	j = 0;
+<<<<<<< HEAD
 	if (!s)
+=======
+	if(!s)
+>>>>>>> 9ab363e7372f9f44c63728d2e1ed6b650049e655
 		return (NULL);
 	ptr = (char *)malloc((size + 1) * sizeof(char));
 	if (!ptr)
